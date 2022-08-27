@@ -14,7 +14,7 @@ device.name1=joyeuse
 device.name2=Redmi note 9 PRO
 device.name3=joyeuse_eea
 device.name4=Joyeuse_EEA
-supported.versions=10, 11, 12
+supported.versions=10, 11, 12, 13
 supported.patchlevels=
 '; } # end properties
 
