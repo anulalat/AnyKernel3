@@ -4,13 +4,13 @@
 ### AnyKernel setup
 # global properties
 properties() { '
-kernel.string=JandaX Kernel for Redmi Note 9 Pro [joyeuse]
+kernel.string=X00TD
 do.devicecheck=1
 do.modules=0
 do.systemless=1
 do.cleanup=1
 do.cleanuponabort=0
-device.name1=joyeuse
+device.name1=X00TD
 supported.versions=
 supported.patchlevels=
 supported.vendorpatchlevels=
