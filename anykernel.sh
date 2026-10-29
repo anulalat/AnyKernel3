@@ -4,7 +4,7 @@
 ### AnyKernel setup
 # global properties
 properties() { '
-kernel.string=JandaX Kernel for Redmi Note 9 Pro [joyeuse]
+kernel.string=Caca 5.4 Kernel for Redmi Note 9 Pro [joyeuse]
 do.devicecheck=1
 do.modules=0
 do.systemless=1
@@ -15,7 +15,6 @@ supported.versions=
 supported.patchlevels=
 supported.vendorpatchlevels=
 '; } # end properties
-
 
 ### AnyKernel install
 ## boot files attributes
@@ -34,8 +33,13 @@ patch_vbmeta_flag=auto;
 . tools/ak3-core.sh;
 
 ## AnyKernel boot install
-split_boot;
+# Keep the stock ramdisk untouched so the vendor edl/charger binary survives,
+# then let magiskboot unpack/repack: it re-signs AVB exactly like the vendor
+# boot.img. A raw dd of an unsigned image trips "System has been destroyed".
+KEEPVERITY=true;
+KEEPFORCEENCRYPT=true;
+export KEEPVERITY KEEPFORCEENCRYPT;
 
-flash_boot;
-flash_dtbo;
+dump_boot;
+write_boot;
 ## end boot install
